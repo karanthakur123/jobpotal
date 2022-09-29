@@ -251,7 +251,6 @@ public class BookController {
 		String CodeValue,token_id;
 		CodeValue=code.get("code");
 		token_id=code.get("token_id");
-//		402600528637776
 		String uri="https://graph.facebook.com/v14.0/oauth/access_token?client_id="+token_id+"&client_secret=1ac9c3132beea719be175bf4047e4173&redirect_uri=https://theengineerss.com/facebookCode.php&code="+CodeValue;
 	    System.out.println(uri);
 		RestTemplate restTemplate =new RestTemplate();
@@ -259,8 +258,6 @@ public class BookController {
 	    return result;
 	
 	}
-	
-	// Post Http Request 
 
 	@PostMapping("/postHttpRequest")
 	public static String abc1(@RequestBody HashMap<String,String> tokenValue) throws IOException {
@@ -268,19 +265,15 @@ public class BookController {
        String token,client_id,message;
 		token=tokenValue.get("token");
 		
-//       var url="https://graph.facebook.com/v14.0/oauth/access_token";
 		client_id=tokenValue.get("client_id");
 		message=tokenValue.get("message");
-//		103335671387134	
       String data= tokenValue.get("message");
         String[] arrOfStr = data.split("--", 3);
         String newlineusinglinesep = System.lineSeparator();
         System.out.println(arrOfStr);
        
         String data1=arrOfStr[2]+ newlineusinglinesep + arrOfStr[1] + newlineusinglinesep + arrOfStr[0];
-//        System.out.println(data1);
        var url="https://graph.facebook.com/"+client_id+"/feed?message="+arrOfStr[2].substring(0,arrOfStr[2].length()-2) + newlineusinglinesep + arrOfStr[1] + newlineusinglinesep + arrOfStr[0].substring(1,arrOfStr[0].length()-1) +"&access_token="+token;
-//       String url1 = json.getString(url);
        String url2 = url.replace("\n", "%0A");
        String url3=url2.replace(" ", "%20");
        String url4 = url3.replace("##", "%0A");
@@ -318,7 +311,6 @@ public class BookController {
             }
             
             return content.toString();
-//            con.getResponseCode();
 
         } finally {
 
@@ -347,25 +339,15 @@ public class BookController {
 				response = client.send(request,
 				        HttpResponse.BodyHandlers.ofString());
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
             System.out.println("here"+response.body());
-            
-//            return content.toString();
-//            con.getResponseCode();
+ 
 
 String urlParameters=null;
-		//        } catch (InterruptedException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		} finally {
-//
-//            con.disconnect();
-//        }
+
 		return urlParameters;
     }
 	

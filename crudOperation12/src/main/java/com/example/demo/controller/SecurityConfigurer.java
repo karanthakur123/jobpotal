@@ -24,7 +24,6 @@ public class SecurityConfigurer extends WebSecurityConfigurerAdapter{
 
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-		// TODO Auto-generated method stub
 		auth.userDetailsService(myUserDetailService);
 	}
 	

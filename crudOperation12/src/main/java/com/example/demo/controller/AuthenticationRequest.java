@@ -3,7 +3,6 @@ package com.example.demo.controller;
 public class AuthenticationRequest {
 public AuthenticationRequest() {
 		
-		// TODO Auto-generated constructor stub
 	}
 	public AuthenticationRequest(String username, String password) {
 		super();
