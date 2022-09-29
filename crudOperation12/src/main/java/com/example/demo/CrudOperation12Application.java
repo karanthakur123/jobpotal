@@ -12,8 +12,13 @@ import org.springframework.context.annotation.ComponentScan;
 
 public class CrudOperation12Application {
 
+		protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+		return application.sources(CrudOperation12Application.class);
+	}
+
 	public static void main(String[] args) {
 		SpringApplication.run(CrudOperation12Application.class, args);
 	}
+
 
 }
