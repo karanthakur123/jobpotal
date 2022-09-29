@@ -124,6 +124,14 @@ public class BookController {
 		 return ResponseEntity.ok().body(response);
 	}
 	
+	@GetMapping("hey")
+	public String hello()
+	{   
+		
+		
+		 return "yes";
+	}
+	
 	@GetMapping("/jobDetails/{username}")
 	public List<JobDetails>  jobDetails(@PathVariable("username") String username)
 	{   
